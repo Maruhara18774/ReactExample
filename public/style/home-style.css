@@ -1,0 +1,32 @@
+body{
+    background: linear-gradient(to right, #61c4f5 0%, #ff9ed7 59%);
+}
+.title{
+    color: #FDD8EE;
+    background: linear-gradient(to right, #0085c7 0%, #ec46a7 59%);
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.examZone{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: white;
+    border-radius: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.examTitle{
+    font-weight: bold;
+    font-size: 20px;
+}
+.examRequirement{
+    font-size: 18px;
+    font-weight: bold;
+}
+.marginLeft20px{
+    margin-left: 20px;
+}
