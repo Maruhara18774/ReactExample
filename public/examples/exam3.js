@@ -17,7 +17,6 @@ class ImageManager extends React.Component{
             imageLink: Album["image1"],
             index: 1
         }
-        this.getInitialState = this.getInitialState.bind(this);
         this.changeImage = this.changeImage.bind(this);
     }
     changeImage(){
@@ -32,12 +31,7 @@ class ImageManager extends React.Component{
         }
         this.setState(this.imageSrcState);
     }
-    getInitialState(){
-        return{
-            imageLink: Album["image1"],
-            index: 1
-        }
-    }
+    
     render(){
         return <div>
             <img src={this.imageSrcState.imageLink} alt="image" className="imageFrame300"></img>
