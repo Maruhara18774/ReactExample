@@ -18,7 +18,7 @@ class IncreaseButton extends React.Component{
     render(){
         return <div>
             <button onClick={this.increaseNumber}>Click {this.state.clickCount}</button>
-            <button onClick={this.resetCount} class="marginLeft20px">Reset</button>
+            <button onClick={this.resetCount} className="marginLeft20px">Reset</button>
         </div>
     }
 }
