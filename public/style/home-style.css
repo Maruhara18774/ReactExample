@@ -41,3 +41,34 @@ body{
 .textAlignCenter{
     text-align: center;
 }
+.note__Frame{
+    background: aquamarine;
+    width: 400px;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.note__Input{
+    background-color: aquamarine;
+}
+.note__Item{
+    background-color: white;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 3px;
+    padding-bottom: 5px;
+}
+.note__Button{
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: aquamarine;
+    border-color: cadetblue;
+    border-width: 2px;
+}
