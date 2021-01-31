@@ -71,4 +71,5 @@ body{
     background-color: aquamarine;
     border-color: cadetblue;
     border-width: 2px;
+    outline: none;
 }
