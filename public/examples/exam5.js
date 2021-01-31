@@ -21,13 +21,42 @@ class List extends React.Component{
     constructor(props) {
         super(props);
         this.arrayState = {
-            coreArray : [new ANote("Hai","Cũng không có gì"), new ANote("Ba","Quan trọng")]
+            coreArray : []
         }
         list = this;
+        this.newTabInput = this.newTabInput.bind(this);
+    }
+    newTabInput(){
+        ReactDOM.render(
+            <InputNote></InputNote>
+            ,document.getElementById("inputZone")
+        )
     }
     render(){
         return <div>
+            <div id="inputZone">
             
+            </div>
+            <button className="marginLeft20px note__Button" onClick={this.newTabInput}>Thêm</button>
+            {
+                this.arrayState.coreArray.map(function(note,index){
+                    return <Note key= {index} header = {note.header} content = {note.content}></Note>
+                })
+            }
+        </div>
+    }
+}
+class AnotherList extends React.Component{
+    constructor(props) {
+        super(props);
+        this.arrayState = {
+            coreArray : []
+        }
+    }
+    render(){
+        return <div>
+            <hr></hr>
+            <h4>Tin nhắn lạ</h4>
             {
                 this.arrayState.coreArray.map(function(note,index){
                     return <Note key= {index} header = {note.header} content = {note.content}></Note>
@@ -39,23 +68,15 @@ class List extends React.Component{
 class InputNote extends React.Component {
     constructor(props) {
         super(props);
-        this.saveNote = this.saveNote.bind(this);
         this.addNewNote = this.addNewNote.bind(this);
         this.txtHeaderRef = React.createRef();
         this.txtContentRef = React.createRef();
-        this.hideInput = this.hideInput.bind(this);
-    }
-    saveNote() {
-        alert("saved")
-        
     }
     addNewNote(){
         var newNote = new ANote(this.txtHeaderRef.current.value,this.txtContentRef.current.value)
         // biến list tham chiếu đến class List
         list.arrayState.coreArray.push(newNote);
         list.setState(list);
-    }
-    hideInput(){
         ReactDOM.unmountComponentAtNode(document.getElementById("inputZone"));
     }
     render() {
@@ -69,11 +90,8 @@ class InputNote extends React.Component {
                         <td>
                             <input type="text" ref={this.txtHeaderRef} placeholder="Nhập tiêu đề ..."></input>
                         </td>
-                        <td>
-                            <button className="marginLeft20px note__Button" onClick={this.saveNote}>Lưu</button>
-                        </td>
                         <td rowSpan="2">
-                            <button className="marginLeft20px note__Button" onClick={this.addNewNote}>Thêm</button>
+                            <button className="marginLeft20px note__Button" onClick={this.addNewNote}>Lưu</button>
                         </td>
                     </tr>
                     <tr>
@@ -82,11 +100,7 @@ class InputNote extends React.Component {
                         </td>
                         <td>
                             <input type="text" ref={this.txtContentRef} placeholder="Nhập nội dung ..."></input>
-                        </td>
-                        <td>
-                            <button className="marginLeft20px note__Button" onClick={this.hideInput}>Ẩn</button>
-                        </td>
-                        
+                        </td>     
                     </tr>
                 </tbody>
             </table>
@@ -97,11 +111,10 @@ class InputNote extends React.Component {
 
 ReactDOM.render(
     <div className="note__Frame">
-        <div id="inputZone">
-            <InputNote></InputNote>
-        </div>
+        
         
         <List></List>
+        <AnotherList></AnotherList>
     </div>
     , document.getElementById("exam5")
 );

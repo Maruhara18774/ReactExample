@@ -1,3 +1,4 @@
+
 const express = require("express");
 const app = express();
 const http = require("http");
@@ -17,7 +18,14 @@ console.log("Running in port 8080");
 }
 }); // Port = 8000
 
+var mang =[["Alien messege 0125","Nice to meet you"],["Alien messege 6523","Why are you running?"]];
 // Xu ly khi truy cap
 app.get("/",function(req,res){
 res.render("home");
 });
+
+app.get("/getNotes",function (req,res) 
+{
+    res.send(mang);
+  });
+
